@@ -20,10 +20,17 @@ import org.apache.dubbo.common.Constants;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
+/**
+ * 使用 Dubbo SPI 机制，默认使用 Curator 实现
+ */
 
 @SPI("curator")
 public interface ZookeeperTransporter {
-
+    /**
+     * 连接创建 zookeeperClient 对象
+     * @param url 注册中心地址
+     * @return zookeeperClient 对象
+     */
     @Adaptive({Constants.CLIENT_KEY, Constants.TRANSPORTER_KEY})
     ZookeeperClient connect(URL url);
 

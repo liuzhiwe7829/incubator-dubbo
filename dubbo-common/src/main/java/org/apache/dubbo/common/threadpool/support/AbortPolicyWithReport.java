@@ -88,7 +88,7 @@ public class AbortPolicyWithReport extends ThreadPoolExecutor.AbortPolicy {
 
             // window system don't support ":" in file name
             if (os.contains("win")) {
-                sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+                    sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
             } else {
                 sdf = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
             }
